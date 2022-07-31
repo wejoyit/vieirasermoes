@@ -1,0 +1,319 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat";
+  background: #EEEEEE;
+  font-size: 18px;
+}
+
+
+
+.containery {
+  margin: 0 auto;
+  text-align: center;
+}
+.containery h1 {
+  margin: 1em 0;
+}
+.containery p {
+  line-height: 1.7rem;
+}
+.containery .lefty {
+  background: url(https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/08/padre-antonio-vieira.jpg);
+  padding: 1em;
+}
+.containery .lefty p, .containery .lefty h1 {
+  color: white;
+}
+.containery .righty p {
+  margin: 2em 0 1em;
+}
+.containery .titulo {
+  FONT-WEIGHT: BOLD;
+  font-size: 1.2em;
+}
+.containery .light {
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin-top: 2em;
+}
+
+.arrows {
+  align-items: center;
+}
+
+.down-arrow {
+  position: relative;
+  width: 4em;
+  z-index: 20;
+  animation: moveArrow 1s alternate-reverse infinite;
+}
+
+.wrapper {
+  margin: 1.5em;
+  margin-top: 4em;
+}
+.wrapper .more-info .imagem {
+  width: 100%;
+  object-fit: cover;
+  height: 15em;
+}
+.wrapper .more-info h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 1.5em;
+}
+.wrapper .more-info blockquote {
+  font-size: 1em;
+  width: 100%;
+  margin: 0px auto;
+  font-style: italic;
+  color: #555555;
+  padding: 0 30px 0 30px;
+  border-left: 8px solid #6c757d;
+  position: relative;
+}
+
+
+.wrapper .more-info blockquote::after {
+  content: "";
+}
+.wrapper .more-info .title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.wrapper .more-info .desc {
+  line-height: 1.5rem;
+}
+.wrapper .more-info .lista ::marker {
+  content: "📌";
+  font-size: 0.2m;
+}
+.wrapper .more-info .lista li {
+  margin-bottom: 0.3em;
+}
+.wrapper .content {
+  text-align: justify;
+}
+
+.mapa {
+  width: 100vw;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+h3, h4 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.carousel {
+  width: 100vw;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+}
+
+.carousel > .slidey {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 1em;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  -webkit-transition: 200ms opacity ease-in-out;
+  transition: 200ms opacity ease-in-out;
+  -webkit-transition-delay: 400ms;
+          transition-delay: 400ms;
+}
+
+.slide > img {
+  width: 100vw;
+  height: 80vh;
+  display: block;
+
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 35;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  top: 40vh;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: white;
+  opacity: 75%;
+  cursor: pointer;
+  border-radius: .5rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+  .wrapper .more-info blockquote {
+    width: 80%;
+    margin: 50px auto;
+    padding: 1.2em 30px 1.2em 75px;
+  }
+  .wrapper .more-info blockquote::before {
+    content: "“";
+    color: #6c757d;
+    font-size: 4em;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+  }
+  .wrapper .more-info blockquote::after {
+    content: "";
+  }
+  .slide > img {
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}
+@media only screen and (min-width: 920px) {
+  .wrapper .feature {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 3em;
+    margin-top: 8em;
+  }
+  .wrapper .feature .imagem {
+    width: 25em;
+  }
+  .wrapper .feature .content {
+    text-align: justify;
+    width: 25em;
+  }
+  .wrapper .feature.left {
+    grid-template-areas: "right left";
+  }
+  .wrapper .feature.left .imagem {
+    grid-area: left;
+  }
+  .wrapper .feature.left .content {
+    text-align: justify;
+    width: 25em;
+    justify-self: left;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .down-arrow {
+    stroke: black;
+    position: unset;
+  }
+
+  p {
+    line-height: 1.7em !important;
+  }
+
+  .inner {
+    display: grid;
+    grid-template-columns: 55% auto;
+  }
+  .inner .lefty {
+    text-align: left;
+    padding: 0 2em;
+    height: 100vh;
+    display: grid;
+  }
+  .inner .lefty .conteudo {
+    padding: 0 3em;
+  }
+  .inner .lefty h1 {
+    margin-top: 120px;
+    font-size: 2.4em;
+  }
+  .inner .lefty h1 span {
+    display: block;
+    font-size: 0.7em;
+  }
+  .inner .righty {
+    text-align: JUSTIFY;
+    align-self: center;
+    padding: 0 2em 1.5em;
+    justify-self: center;
+  }
+
+  .proto-container {
+    clip-path: inset(0 45% 0 0);
+    position: absolute;
+    top: 20%;
+    height: 70%;
+    z-index: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+  .proto-container .proto {
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    width: 19%;
+    height: 80%;
+    float: left;
+    margin-left: 1em;
+    transform: translateX(10%);
+  }
+}
+@media only screen and (min-width: 1600px) {
+  body {
+    font-size: 22px;
+  }
+
+  .conteudo {
+    padding: 0 6em !important;
+  }
+
+  .righty {
+    padding: 0 !important;
+  }
+}
+@keyframes moveArrow {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes moveDown {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
